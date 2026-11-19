@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowDownLeft, ArrowDownRight, ArrowUpRight, Camera, Cloud, CloudDrizzle, CloudFog, CloudLightning, CloudRain, CloudSnow, CloudSun, Coffee, MapPin, MoveRight, Moon, RefreshCw, Sun, Trees } from 'lucide-react';
 
-const weatherUrl = 'https://api.open-meteo.com/v1/forecast?latitude=23.0225&longitude=72.5714&current=temperature_2m,apparent_temperature,weather_code,is_day&temperature_unit=celsius&timezone=auto';
+const weatherUrl = 'https://api.open-meteo.com/v1/forecast?latitude=44.6488&longitude=-63.5752&current=temperature_2m,apparent_temperature,weather_code,is_day&temperature_unit=celsius&timezone=auto';
 const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
 
 function describeWeather(code) {
@@ -29,31 +29,31 @@ function getWeatherIcon(code, isDay) {
 }
 
 function getWeatherArt(temperatureC) {
-  if (temperatureC <= 10) return { src: assetUrl('weather/cold.png'), alt: 'Snowy mountain beneath a pale winter sky' };
-  if (temperatureC < 20) return { src: assetUrl('weather/mild.png'), alt: 'Soft clouds over green rolling hills' };
-  return { src: assetUrl('weather/sunny.png'), alt: 'Warm sun over green hills' };
+  if (temperatureC <= 10) return { src: assetUrl('weather/cold.png'), alt: 'Blue cloud with falling snowflakes' };
+  if (temperatureC < 20) return { src: assetUrl('weather/mild.png'), alt: 'Sun partly covered by a blue cloud' };
+  return { src: assetUrl('weather/sunny.png'), alt: 'Bright yellow sun' };
 }
 
 const places = [
   {
     number: '01',
-    name: 'Sabarmati Riverfront',
-    kind: 'RIVERFRONT · SABARMATI RIVER',
-    detail: 'A lively promenade for evening walks, city views, and a little fresh air by the river.',
+    name: 'Halifax Waterfront',
+    kind: 'HARBOUR · DOWNTOWN HALIFAX',
+    detail: 'A lively boardwalk along the harbour, with public art, local shops, and wide-open waterfront views.',
     icon: <Camera size={18} strokeWidth={1.7} />,
   },
   {
     number: '02',
-    name: 'Sabarmati Ashram',
-    kind: 'HISTORY · ASHRAM ROAD',
-    detail: 'A peaceful historic site on the river, closely connected to Mahatma Gandhi and India’s independence movement.',
+    name: 'Halifax Citadel',
+    kind: 'HISTORY · CITADEL HILL',
+    detail: 'A star-shaped National Historic Site overlooking downtown and the harbour, with a window into Halifax’s history.',
     icon: <Trees size={18} strokeWidth={1.7} />,
   },
   {
     number: '03',
-    name: 'Manek Chowk',
-    kind: 'FOOD MARKET · OLD AHMEDABAD',
-    detail: 'A bustling square that becomes a favorite street-food destination after sunset.',
+    name: 'Point Pleasant Park',
+    kind: 'PARK · SOUTH END',
+    detail: 'A peaceful coastal park with wooded trails, ocean views, and historic sites at the edge of the city.',
     icon: <Coffee size={18} strokeWidth={1.7} />,
   },
 ];
@@ -108,7 +108,7 @@ function App() {
     ? "It's cold outside. Stay warm!"
     : weather.temperatureC < 20
       ? 'The weather is mild today!'
-      : "It's a warm day in Ahmedabad!");
+      : "It's a warm day in Halifax!");
 
   return (
     <main className="site-shell">
@@ -121,7 +121,7 @@ function App() {
           <button className={isAbout ? 'active' : ''} onClick={() => setView('about')} aria-current={isAbout ? 'page' : undefined}>About me</button>
           <button className={!isAbout ? 'active' : ''} onClick={() => setView('town')} aria-current={!isAbout ? 'page' : undefined}>My town</button>
         </nav>
-        <div className="location-mark"><MapPin size={15} /> AHMEDABAD, IN</div>
+        <div className="location-mark"><MapPin size={15} /> HALIFAX, NS</div>
       </header>
 
       {isAbout ? (
@@ -153,38 +153,37 @@ function App() {
             </div>
           </div>
 
-          <div className="bottom-note"><span>MADE OF SMALL MOMENTS</span><span>SCROLL TO EXPLORE <ArrowDownRight size={15} /></span><span>23°01′N 72°34′E</span></div>
+          <div className="bottom-note"><span>MADE OF SMALL MOMENTS</span><span>SCROLL TO EXPLORE <ArrowDownRight size={15} /></span><span>44°39′N 63°34′W</span></div>
         </section>
       ) : (
         <section className="view town-view" id="top" aria-labelledby="page-title">
           <div className="eyebrow town-kicker"><span className="eyebrow-line" /> MY HOME TOWN IN <span className="eyebrow-count">02 / 02</span></div>
           <figure className="town-photo">
-            <img src={assetUrl('images/sabarmati-riverfront.jpg')} alt="People walking along the Sabarmati Riverfront in Ahmedabad" />
-            <figcaption><span><MapPin size={14} /> AHMEDABAD, GUJARAT</span><span>23°01′N&nbsp;&nbsp; 72°34′E</span></figcaption>
-            <a className="photo-credit" href="https://commons.wikimedia.org/wiki/File:View_of_Sabarmati_Riverfront,_Ahmedabad.jpg" target="_blank" rel="noreferrer">Photo: Manjil Purohit · CC BY-SA 3.0</a>
+            <img src={assetUrl('images/halifax-harbour.svg')} alt="Illustration of Halifax Harbour, its skyline, and a ferry" />
+            <figcaption><span><MapPin size={14} /> HALIFAX, NOVA SCOTIA</span><span>44°39′N&nbsp;&nbsp; 63°34′W</span></figcaption>
           </figure>
 
           <div className="town-heading">
             <div>
-              <h1 id="page-title">Welcome to <em>Ahmedabad!</em></h1>
+              <h1 id="page-title">Welcome to <em>Halifax!</em></h1>
             </div>
             <div className="town-intro">
-              <p>Ahmedabad is a vibrant city in Gujarat, India, known for its rich history, beautiful architecture, delicious Gujarati food, and colorful culture.</p>
-              <p>From the Sabarmati Riverfront to the historic Sabarmati Ashram, the city beautifully blends tradition with modern development.</p>
+              <p>Halifax is a welcoming coastal city on the Atlantic Ocean, known for its working harbour, maritime history, and lively arts and food scene.</p>
+              <p>Stroll the waterfront, explore the historic Citadel, or find a quiet trail in Point Pleasant Park—there’s always a way to enjoy the sea air.</p>
             </div>
           </div>
 
-          <aside className="weather-feature" aria-label="Current weather in Ahmedabad" aria-live="polite">
+          <aside className="weather-feature" aria-label="Current weather in Halifax" aria-live="polite">
             {weatherArt ? (
               <img className="weather-art" src={weatherArt.src} alt={weatherArt.alt} />
             ) : (
               <div className="weather-art-placeholder"><WeatherIcon size={36} /></div>
             )}
             <div className="weather-reading">
-              <a className="weather-attribution" href="https://open-meteo.com/" target="_blank" rel="noreferrer">CURRENT WEATHER IN AHMEDABAD · OPEN-METEO</a>
+              <a className="weather-attribution" href="https://open-meteo.com/" target="_blank" rel="noreferrer">CURRENT WEATHER IN HALIFAX · OPEN-METEO</a>
               {weather ? (
                 <>
-                  <h2 className="weather-title">Current Weather in Ahmedabad</h2>
+                  <h2 className="weather-title">Current Weather in Halifax</h2>
                   <strong>{displayTemperature}°{isFahrenheit ? 'F' : 'C'}</strong>
                   <span>{describeWeather(weather.code)} · feels like {displayFeelsLike}°{isFahrenheit ? 'F' : 'C'}</span>
                   <span className="weather-advice">{weatherAdvice}</span>
@@ -217,7 +216,7 @@ function App() {
             ))}
           </div>
           <button className="text-link town-back" onClick={() => setView('about')}><ArrowDownLeft size={16} /> Back to About Me</button>
-          <div className="bottom-note"><span>MADE OF SMALL MOMENTS</span><span>MORE SOON <ArrowDownRight size={15} /></span><span>GUJARAT, INDIA</span></div>
+          <div className="bottom-note"><span>MADE OF SMALL MOMENTS</span><span>MORE SOON <ArrowDownRight size={15} /></span><span>NOVA SCOTIA, CANADA</span></div>
         </section>
       )}
     </main>

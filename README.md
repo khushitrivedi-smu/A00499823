@@ -1,18 +1,18 @@
 # About Me & My Town
 
-A responsive React app introducing Khushi Trivedi and her home city, Ahmedabad, Gujarat. It includes live weather, temperature-based illustrations, and a local city guide.
+A responsive React app introducing Khushi Trivedi and Halifax, Nova Scotia. It includes live Halifax weather, temperature-based illustrations, and a local city guide.
 
 ## Features
 
 - Two views: About Me and My Town, with working navigation between them.
-- Live current weather for Ahmedabad, fetched from Open-Meteo.
+- Live current weather for Halifax, fetched from Open-Meteo.
 - Celsius/Fahrenheit toggle. Weather artwork is selected using the Celsius temperature.
 - Weather illustrations by temperature:
   - `10°C` or colder: `cold.png`
   - Above `10°C` and below `20°C`: `mild.png`
   - `20°C` or warmer: `sunny.png`
 - Loading and error messages, with a retry button if the weather request fails.
-- Sabarmati Riverfront photo, Ahmedabad highlights, and responsive styling.
+- Halifax harbour illustration, local highlights, and responsive styling.
 
 ## Run the App
 
@@ -34,13 +34,9 @@ npm run preview
 
 ## Weather Data
 
-The app requests current weather from the [Open-Meteo Forecast API](https://open-meteo.com/) using Ahmedabad coordinates (`23.0225, 72.5714`). No API key is required. Temperature thresholds use the Celsius value returned by the API, regardless of the selected display unit.
+The app requests current weather from the [Open-Meteo Forecast API](https://open-meteo.com/) using Halifax coordinates (`44.6488, -63.5752`). No API key is required. Temperature thresholds use the Celsius value returned by the API, regardless of the selected display unit.
 
 Weather data is provided by Open-Meteo. See its [terms and attribution requirements](https://open-meteo.com/en/terms).
-
-## Photo Credit
-
-The Sabarmati Riverfront photo is by [Manjil Purohit](https://commons.wikimedia.org/wiki/File:View_of_Sabarmati_Riverfront,_Ahmedabad.jpg) and is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
 
 ## Project Structure
 
@@ -51,7 +47,7 @@ src/
   styles.css    Responsive page styling
 public/
   images/
-    sabarmati-riverfront.jpg
+    halifax-harbour.svg
   weather/
     cold.png
     mild.png
