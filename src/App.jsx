@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowDownLeft, ArrowDownRight, ArrowUpRight, Camera, Cloud, CloudDrizzle, CloudFog, CloudLightning, CloudRain, CloudSnow, CloudSun, Coffee, MapPin, MoveRight, Moon, RefreshCw, Sun, Trees } from 'lucide-react';
+import { ArrowDownLeft, ArrowDownRight, ArrowUpRight, Camera, Cloud, CloudDrizzle, CloudFog, CloudLightning, CloudRain, CloudSnow, CloudSun, MapPin, MoveRight, Moon, RefreshCw, Sun, Trees } from 'lucide-react';
 
 const weatherUrl = 'https://api.open-meteo.com/v1/forecast?latitude=44.6488&longitude=-63.5752&current=temperature_2m,apparent_temperature,weather_code,is_day&temperature_unit=celsius&timezone=auto';
 const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
@@ -48,13 +48,6 @@ const places = [
     kind: 'HISTORY · CITADEL HILL',
     detail: 'A star-shaped National Historic Site overlooking downtown and the harbour, with a window into Halifax’s history.',
     icon: <Trees size={18} strokeWidth={1.7} />,
-  },
-  {
-    number: '03',
-    name: 'Point Pleasant Park',
-    kind: 'PARK · SOUTH END',
-    detail: 'A peaceful coastal park with wooded trails, ocean views, and historic sites at the edge of the city.',
-    icon: <Coffee size={18} strokeWidth={1.7} />,
   },
 ];
 
@@ -169,7 +162,6 @@ function App() {
             </div>
             <div className="town-intro">
               <p>Halifax is a welcoming coastal city on the Atlantic Ocean, known for its working harbour, maritime history, and lively arts and food scene.</p>
-              <p>Stroll the waterfront, explore the historic Citadel, or find a quiet trail in Point Pleasant Park—there’s always a way to enjoy the sea air.</p>
             </div>
           </div>
 
@@ -204,7 +196,7 @@ function App() {
             </div>
           </aside>
 
-          <div className="places-heading"><div className="about-label"><span className="section-index">02—</span><span>MY LITTLE<br />CITY GUIDE</span></div><p>Places I return to, take friends to, and keep tucked away for a sunny afternoon.</p><span className="place-count">THREE FAVORITES <ArrowUpRight size={15} /></span></div>
+          <div className="places-heading"><div className="about-label"><span className="section-index">02—</span><span>MY LITTLE<br />CITY GUIDE</span></div><p>Two places to explore.</p><span className="place-count">TWO FAVORITES <ArrowUpRight size={15} /></span></div>
           <div className="place-list">
             {places.map((place) => (
               <article className="place-row" key={place.number}>
