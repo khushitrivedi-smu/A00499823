@@ -73,4 +73,4 @@ so both the app bundle and public images work when served from a project page.
 
 ## AI Use Disclosure
 
-GitHub Copilot was used to help scaffold the app, implement the weather request, unit conversion, temperature-based image selection and responsive layout, and draft this README. The live weather behavior and temperature conversion were tested in the browser. The profile content was provided by Khushi.
+GitHub Copilot was used to help, unit conversion, and responsive layout app development and documentation. The live weather behavior and temperature conversion were tested in the browser. The profile content was provided by Khushi.
