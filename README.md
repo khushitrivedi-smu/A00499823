@@ -62,12 +62,18 @@ Edit `src/App.jsx` to change the profile text, city description, or favorite pla
 
 ## Deployment
 
-To deploy with Vercel:
+This project is configured to deploy to GitHub Pages using the workflow in
+`.github/workflows/deploy.yml`.
 
-1. Push the project to a GitHub repository.
-2. Import the repository in Vercel.
-3. Use `npm run build` as the build command and `dist` as the output directory.
-4. Deploy. No environment variables are needed.
+1. Push the project to the `main` or `master` branch of a GitHub repository.
+2. In the repository, open **Settings → Pages** and set the build and
+   deployment source to **GitHub Actions**.
+3. Open **Actions** and wait for the **Deploy to GitHub Pages** workflow to
+   complete. The public site URL appears in the workflow run and in **Settings
+   → Pages**.
+
+The Vite base path is set from the repository name during the workflow build,
+so both the app bundle and public images work when served from a project page.
 
 ## AI Use Disclosure
 
